@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChasingWindmillsInLogic", "ChasingWindmillsInLogic\ChasingWindmillsInLogic.csproj", "{B15BBFDE-580E-4022-8380-8A4E698EE18D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D44483C-62F1-42D9-B822-8A23AB24EE5A}
+	EndGlobalSection
+EndGlobal
