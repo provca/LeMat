@@ -1,10 +1,9 @@
-﻿
-namespace ChasingWindmillsInLogic.DonQuixote
+﻿namespace ChasingWindmillsInLogic.ChasingWindmills
 {
     /// <summary>
     /// A class that represents a paradoxical logical construct inspired by Don Quixote.
     /// </summary>
-    internal class DonQuixoteLogic
+    public class Game
     {
         /// <summary>
         /// Evaluates a self-referential logical proposition in an infinite loop.
@@ -19,7 +18,7 @@ namespace ChasingWindmillsInLogic.DonQuixote
         /// <exception cref="StackOverflowException">
         /// Always thrown due to infinite recursion.
         /// </exception>
-        public static bool DonQuixote() => !DonQuixote();
+        public static bool ChasingWindmills() => !ChasingWindmills();
 
         /// <summary>
         /// Evaluates a self-referential logical proposition with bounded recursion.
@@ -36,7 +35,7 @@ namespace ChasingWindmillsInLogic.DonQuixote
         /// <exception cref="StackOverflowException">
         /// Thrown when the maximum recursion depth is reached.
         /// </exception>
-        public static bool DonQuixote(int depth)
+        public static bool ChasingWindmills(int depth)
         {
             // Initial message when starting the recursion.
             if (depth == 0)
@@ -54,7 +53,7 @@ namespace ChasingWindmillsInLogic.DonQuixote
             }
 
             // Returns the negation of the next recursive call.
-            return !DonQuixote(depth + 1);
+            return !ChasingWindmills(depth + 1);
         }
     }
 }

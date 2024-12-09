@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChasingWindmillsInLogic", "ChasingWindmillsInLogic\ChasingWindmillsInLogic.csproj", "{B15BBFDE-580E-4022-8380-8A4E698EE18D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChasingWindmillsInLogic", "ChasingWindmillsInLogic\ChasingWindmillsInLogic.csproj", "{6BFE15FC-D0E2-4800-BB4E-A0477EA955BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B15BBFDE-580E-4022-8380-8A4E698EE18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BFE15FC-D0E2-4800-BB4E-A0477EA955BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFE15FC-D0E2-4800-BB4E-A0477EA955BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFE15FC-D0E2-4800-BB4E-A0477EA955BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFE15FC-D0E2-4800-BB4E-A0477EA955BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2D44483C-62F1-42D9-B822-8A23AB24EE5A}
+		SolutionGuid = {A92263AD-1915-4705-AEAC-32B1EA21BF16}
 	EndGlobalSection
 EndGlobal
