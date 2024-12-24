@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchroedingersCat", "SchroedingersCat\SchroedingersCat.csproj", "{5167010A-EDAB-4CAE-8349-4C2BDA325989}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumCat", "..\..\..\Backend\QuantumCat\QuantumCat\QuantumCat.csproj", "{F08820DE-4177-4490-829C-FF24C1F13BB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5167010A-EDAB-4CAE-8349-4C2BDA325989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5167010A-EDAB-4CAE-8349-4C2BDA325989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5167010A-EDAB-4CAE-8349-4C2BDA325989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5167010A-EDAB-4CAE-8349-4C2BDA325989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08820DE-4177-4490-829C-FF24C1F13BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08820DE-4177-4490-829C-FF24C1F13BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08820DE-4177-4490-829C-FF24C1F13BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08820DE-4177-4490-829C-FF24C1F13BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E10AB858-3F9A-4ACF-A7CE-986432E5EC21}
+	EndGlobalSection
+EndGlobal
