@@ -3,40 +3,44 @@ using ByzantineConsensus.Models;
 
 namespace ByzantineConsensus.Logic
 {
+    /// <summary>
+    /// Provides methods for calculating and displaying game statistics.
+    /// </summary>
     internal class Statistics : IStatistics
     {
+        /// <inheritdoc />
         public (int Total, int Loyal, int Traitor) CalculateStatistics(List<General> generals) =>
             (generals.Count, generals.Count(g => g.IsHonest), generals.Count(g => !g.IsHonest));
 
+        /// <inheritdoc />
         public void DisplayInitialStatistics(List<General> generals, IUserInterface ui)
         {
-            var (totalGenerals, loyalGenerals, traitorGenerals) = CalculateStatistics(generals);
+            var (total, loyal, traitor) = CalculateStatistics(generals);
             ui.WriteLine(
                 $"Initial Statistics:\n" +
-                $"Loyal Generals: {loyalGenerals} ({(loyalGenerals * 100.0 / totalGenerals):F2}%)\n" +
-                $"Traitor Generals: {traitorGenerals} ({(traitorGenerals * 100.0 / totalGenerals):F2}%)\n"
-                );
+                $"Loyal: {loyal} ({(loyal * 100.0 / total):F2}%)\n" +
+                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)"
+            );
         }
 
+        /// <inheritdoc />
         public void DisplayGeneralStatistics(List<General> generals, IUserInterface ui)
         {
             foreach (var general in generals)
             {
-                ui.WriteLine(
-                    $"{general.Name} - Loyalty: {(general.IsHonest
-                    ? "Loyal"
-                    : "Traitor")}, Respect: {general.Respect}");
+                ui.WriteLine($"{general.Name} - Loyalty: {(general.IsHonest ? "Loyal" : "Traitor")}, Respect: {general.Respect}");
             }
         }
 
+        /// <inheritdoc />
         public void DisplayFinalStatistics(List<General> generals, IUserInterface ui)
         {
-            var (totalGenerals, loyalGenerals, traitorGenerals) = CalculateStatistics(generals);
+            var (total, loyal, traitor) = CalculateStatistics(generals);
             ui.WriteLine(
                 $"\nFinal Statistics:\n" +
-                $"Loyal Generals: {loyalGenerals} ({(loyalGenerals * 100.0 / totalGenerals):F2}%)\n" +
-                $"Traitor Generals: {traitorGenerals} ({(traitorGenerals * 100.0 / totalGenerals):F2}%)\n"
-                );
+                $"Loyal: {loyal} ({(loyal * 100.0 / total):F2}%)\n" +
+                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)"
+            );
 
             DisplayGeneralStatistics(generals, ui);
         }
