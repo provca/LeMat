@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>Pere Rovira</Authors>
-    <Description>Byzantine Generals.</Description>
+    <Description>A strategy-based simulation game inspired by the Byzantine Generals' Problem. The game allows a king to interact with his generals, persuade them to either remain loyal or become traitors, and make decisions that impact the course of battle. The game involves a series of rounds where the king must manage loyalty, respect, and betrayal within his army.</Description>
     <Company>N/A</Company>
     <ProjectUrl>https://github.com/provca</ProjectUrl>
     <Version>1.0.0</Version>

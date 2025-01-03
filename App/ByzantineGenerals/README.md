@@ -72,6 +72,14 @@ QuantumCat/
 
 5. **Continuing to the Next Round**: If the King decides to continue to the second round, the game proceeds with the next phase of persuasion, where the King can further influence the generals' loyalty. The generals' positions may evolve, and new dynamics can emerge. This round offers another opportunity to sway the loyalty of the generals, either to strengthen the King's command or risk more betrayal.
 
+6. **Final Decision**: At the end of the game, the King is given a chance to change the initial decision (attack or retreat) based on the final loyalty statistics. The result of the game depends on the majority of generals:
+
+  - If loyal generals are the majority, the King always wins, regardless of whether the decision changes.
+    - If traitors are the majority:
+    - The King wins if the final decision aligns with the majority.
+  - The King loses if the final decision does not align with the majority.
+  - In the case of a tie between loyal and traitor generals, the game results in a draw, with no clear winner.
+
 ## Classes and Methods
 
 ### `King`
@@ -106,26 +114,23 @@ The king can influence generals using different methods:
 - **Type `A`**: for Attack.
 - **Type `R`**: for Retreat.
 ```
-Initial Statistics:
-Loyal: 2 (50,00%)
-Traitor: 2 (50,00%)
 Welcome to the Byzantine Generals' Council.
 You are the King. Decide whether to attack or retreat.
 Beware: some generals may be traitors!
 
-What is your initial order? (attack (A)/retreat (R))
+Initial Statistics:
+Loyal: 2 (50,00%)
+Traitor: 2 (50,00%)
+What is your initial order? attack (A)/retreat (R)
 > A
 ```
 - **Type a number**: Select the action to say to each general. Each selection will provide you with the general's response.
 ```
-Round 1:
-
 Interacting with General A...
-Choose an action:
 1. War is not won solely on the battlefield, but also in the hearts of men.
 2. The art of governance is balancing mercy with severity.
 3. The Byzantine Empire never died; it merely changed form.
-> 2
+   Select an action (Enter a number between 1 and 3): 2
 
 ...
 ```
@@ -134,38 +139,32 @@ Choose an action:
 End of Round Statistics:
 General A - Loyalty: Traitor, Respect: 2
 General B - Loyalty: Traitor, Respect: 2
-General C - Loyalty: Traitor, Respect: 2
-General D - Loyalty: Loyal, Respect: 1
+General C - Loyalty: Loyal, Respect: 1
+General D - Loyalty: Loyal, Respect: 3
 Do you want to proceed to the next round or stop and finalize? (continue (C)/stop (S))
 > C
 
 ...
 
-Interacting with General C...
-Choose an action:
-1. War is not won solely on the battlefield, but also in the hearts of men.
-2. The art of governance is balancing mercy with severity.
-3. The Byzantine Empire never died; it merely changed form.
-> 3
-General C: "A king who destroys his country is not a king, but an executioner."
-
-...
-...
-...
-
 End of Round Statistics:
-General A - Loyalty: Loyal, Respect: 3
-General B - Loyalty: Loyal, Respect: 3
-General C - Loyalty: Loyal, Respect: 3
-General D - Loyalty: Loyal, Respect: 3
+General A - Loyalty: Traitor, Respect: 2
+General B - Loyalty: Traitor, Respect: 2
+General C - Loyalty: Traitor, Respect: 0
+General D - Loyalty: Loyal, Respect: 5
+What is your final order? (attack (A)/retreat (R))
+> A
+
+...
+
+Result: You won! Changing your decision has made the traitors align with you.
 
 Final Statistics:
-Loyal: 4 (100,00%)
-Traitor: 0 (0,00%)
-General A - Loyalty: Loyal, Respect: 3
-General B - Loyalty: Loyal, Respect: 3
-General C - Loyalty: Loyal, Respect: 3
-General D - Loyalty: Loyal, Respect: 3
+Loyal: 1 (25,00%)
+Traitor: 3 (75,00%)
+General A - Loyalty: Traitor, Respect: 2
+General B - Loyalty: Traitor, Respect: 2
+General C - Loyalty: Traitor, Respect: 0
+General D - Loyalty: Loyal, Respect: 5
 ```
 
 ### License
