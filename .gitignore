@@ -397,5 +397,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# pdb debug files
+*.pdb
+
 # Misc
 resources/

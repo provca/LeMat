@@ -8,6 +8,7 @@ namespace ThreeDoors.Logic
     public class StatisticsManager
     {
         private int _totalRounds;
+        private int _totalLoses;
         private int _winsBySwitching;
         private int _winsBySticking;
 
@@ -29,6 +30,8 @@ namespace ThreeDoors.Logic
                 else
                     _winsBySticking++;
             }
+            else
+                _totalLoses++;
         }
 
         /// <summary>
@@ -39,8 +42,9 @@ namespace ThreeDoors.Logic
         {
             // Output the statistics to the user interface.
             ui.WriteLine("Statistics:");
-            ui.WriteLine($"Rounds played: {_totalRounds}");
-            ui.WriteLine($"Wins by switching doors: {_winsBySwitching} ({(double)_winsBySwitching / _totalRounds:P})");
+            ui.WriteLine($"Rounds played:                         {_totalRounds}");
+            ui.WriteLine($"Total loses:                           {_totalLoses} ({(double)_totalLoses / _totalRounds:P})");
+            ui.WriteLine($"Wins by switching doors:               {_winsBySwitching} ({(double)_winsBySwitching / _totalRounds:P})");
             ui.WriteLine($"Wins by staying with the initial door: {_winsBySticking} ({(double)_winsBySticking / _totalRounds:P})");
         }
     }

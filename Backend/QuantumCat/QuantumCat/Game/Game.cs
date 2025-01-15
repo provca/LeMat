@@ -38,7 +38,7 @@ namespace QuantumCat.Game
 
             while (true)
             {
-                _ui.Write("What would you like to do? ");
+                _ui.Write("\nWhat would you like to do? ");
                 string? input = _ui.ReadLine();
 
                 if (input == null)

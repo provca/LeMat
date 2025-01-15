@@ -16,16 +16,19 @@ namespace ByzantineConsensus.Models
         public string GetInitialDecision(IUserInterface ui)
         {
             // Prompt the King for the initial decision (attack or retreat).
-            string prompt = "What is your initial order? attack (A)/retreat (R)";
-            Decision = prompt;
-            return InputHelper.GetValidatedInput(ui, prompt, new[] { "A", "R" });
+            string prompt = "What is your initial order? attack (A)/retreat (R): ";
+
+            // Set value for Decision.
+            Decision = InputHelper.GetValidatedInput(ui, prompt, new[] { "A", "R" });
+
+            return Decision;
         }
 
         /// <inheritdoc />
         public string ChangeInitialDecision(IUserInterface ui)
         {
             // Prompt the King for the final decision (attack or retreat).
-            string prompt = "What is your final order? (attack (A)/retreat (R))";
+            string prompt = "What is your final order? (attack (A)/retreat (R)): ";
             string input = InputHelper.GetValidatedInput(ui, prompt, new[] { "A", "R" });
 
             if (!string.IsNullOrEmpty(input))
@@ -43,6 +46,7 @@ namespace ByzantineConsensus.Models
             foreach (IGeneral general in generals.Cast<IGeneral>())
             {
                 ui.Clear();
+                ui.WriteLine($"Your order is: {InputHelper.FullTextOfDecision(kingTrigger.Decision)}\n");
                 ui.WriteLine($"Interacting with {general.Name}...");
                 ui.WriteLine(
                     "1. War is not won solely on the battlefield, but also in the hearts of men.\n" +
@@ -88,6 +92,9 @@ namespace ByzantineConsensus.Models
                     ui.WriteLine($"{general.Name}: \"I don't understand your command.\"");
                     break;
             }
+
+            ui.WriteLine("\n> Press any key to continue...");
+            ui.ReadLine();
         }
 
         /// <summary>

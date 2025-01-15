@@ -19,17 +19,22 @@ namespace ByzantineConsensus.Logic
             ui.WriteLine(
                 $"Initial Statistics:\n" +
                 $"Loyal: {loyal} ({(loyal * 100.0 / total):F2}%)\n" +
-                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)"
+                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)\n"
             );
         }
 
         /// <inheritdoc />
         public void DisplayGeneralStatistics(List<General> generals, IUserInterface ui)
         {
+            DisplayInitialStatistics(generals, ui);
+
+            // Uncomment bucle to see the properties of each general.
+            /*
             foreach (var general in generals)
             {
                 ui.WriteLine($"{general.Name} - Loyalty: {(general.IsHonest ? "Loyal" : "Traitor")}, Respect: {general.Respect}");
             }
+            */
         }
 
         /// <inheritdoc />
@@ -39,10 +44,13 @@ namespace ByzantineConsensus.Logic
             ui.WriteLine(
                 $"\nFinal Statistics:\n" +
                 $"Loyal: {loyal} ({(loyal * 100.0 / total):F2}%)\n" +
-                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)"
+                $"Traitor: {traitor} ({(traitor * 100.0 / total):F2}%)\n"
             );
 
-            DisplayGeneralStatistics(generals, ui);
+            foreach (var general in generals)
+            {
+                ui.WriteLine($"{general.Name} - Loyalty: {(general.IsHonest ? "Loyal" : "Traitor")}, Respect: {general.Respect}");
+            }
         }
     }
 }

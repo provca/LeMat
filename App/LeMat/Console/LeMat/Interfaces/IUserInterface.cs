@@ -1,4 +1,4 @@
-﻿namespace ThreeDoors.Interfaces
+﻿namespace LeMat.Interfaces
 {
     /// <summary>
     /// Defines a user interface for interacting with input and output streams.
@@ -25,6 +25,8 @@
 
         /// <summary>
         /// Clears the console screen.
+        /// Some clases colud configure the console colors by setting the foreground and background colors,
+        /// for example in <see cref="LeMat.User.ConsoleUserInterface"/>.
         /// </summary>
         void Clear();
     }

@@ -16,18 +16,18 @@ namespace ByzantineConsensus.Logic
             for (int round = 1; round <= 2; round++)
             {
                 ui.Clear();
-                ui.WriteLine($"Round {round}:");
                 kingTrigger.ExecutePersuasionRound(ui, generals, kingTrigger);
 
                 // Display statistics at the end of the round.
                 ui.Clear();
-                ui.WriteLine("\nEnd of Round Statistics:");
+                ui.WriteLine("End of Round Statistics:");
+                ui.WriteLine($"Your order is: {InputHelper.FullTextOfDecision(kingTrigger.Decision)}");
                 statisticsService.DisplayGeneralStatistics(generals, ui);
 
                 if (round == 1)
                 {
                     // Prompt the King to continue or stop after the first round.
-                    string prompt = "Do you want to proceed to the next round or stop and finalize? (continue (C)/stop (S))";
+                    string prompt = "Do you want to proceed to the next round or stop and finalize? (continue (C)/stop (S)): ";
                     string decision = InputHelper.GetValidatedInput(ui, prompt, new[] { "C", "S" });
 
                     if (decision == "S")
@@ -84,7 +84,10 @@ namespace ByzantineConsensus.Logic
                 else
                 {
                     // The King wins if they adapt and change their decision to align with the majority.
-                    ui.WriteLine("Result: You won! Changing your decision has made the traitors align with you.");
+                    ui.WriteLine(
+                        $"Result: You won! Changing {InputHelper.FullTextOfDecision(initialDecision)} " +
+                        $"to {InputHelper.FullTextOfDecision(finalDecision)} has made the traitors align with you; They don't know it.\n" +
+                        $"Now, They will {InputHelper.FullTextOfDecision(initialDecision)}.");
                 }
             }
         }

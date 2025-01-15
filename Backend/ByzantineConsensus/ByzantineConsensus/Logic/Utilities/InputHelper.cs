@@ -19,7 +19,7 @@ namespace ByzantineConsensus.Logic.Utilities
             string input;
             do
             {
-                ui.WriteLine(prompt);
+                ui.Write(prompt);
                 input = ui.ReadLine()?.Trim().ToUpper() ?? string.Empty;
 
                 if (!validOptions.Contains(input))
@@ -53,6 +53,17 @@ namespace ByzantineConsensus.Logic.Utilities
 
                 ui.WriteLine($"Invalid input. Please enter a number between {min} and {max}.");
             } while (true);
+        }
+
+        /// <summary>
+        /// Converts a short decision code into its full text representation.
+        /// </summary>
+        /// <param name="decision">The decision code ("A" for Attack, "R" for Retreat).</param>
+        /// <returns>The full text of the decision.</returns>
+        public static string FullTextOfDecision(string decision)
+        {
+            // Return the corresponding full text based on the decision code.
+            return decision == "A" ? "Attack" : "Retreat";
         }
     }
 }

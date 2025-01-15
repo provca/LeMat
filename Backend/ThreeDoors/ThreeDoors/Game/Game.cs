@@ -33,7 +33,7 @@ namespace ThreeDoors.Game
         /// <summary>
         /// Plays a single round of the game.
         /// </summary>
-        public void PlayRound()
+        public int PlayRound()
         {
             // Reset the state of all doors.
             ResetDoors();
@@ -43,6 +43,10 @@ namespace ThreeDoors.Game
 
             // Get the player's initial choice of door.
             int chosenDoor = GetPlayerChoice();
+
+            // Exit to game.
+            if (chosenDoor < 0)
+                return -1;
 
             // Reveal a door that is empty (does not have the prize).
             int revealedDoor = RevealEmptyDoor(chosenDoor);
@@ -61,6 +65,8 @@ namespace ThreeDoors.Game
 
             // Record the result of this round in the statistics manager.
             _statisticsManager.RecordResult(wantsToSwitch, hasWon);
+
+            return 0;
         }
 
         /// <summary>
@@ -91,10 +97,27 @@ namespace ThreeDoors.Game
         /// <returns>The index of the chosen door.</returns>
         private int GetPlayerChoice()
         {
-            _ui.WriteLine("Choose a door (1, 2, or 3):");
+            while (true)
+            {
+                _ui.WriteLine("Choose a door (1, 2, or 3) or press 'q' to quit:");
 
-            // Parse the player's input and adjust for zero-based indexing.
-            return int.Parse(_ui.ReadLine()) - 1;
+                string? input = _ui.ReadLine()?.Trim().ToLower();
+
+                if (input == "q")
+                {
+                    _ui.WriteLine("Exiting the game...");
+                    return -1;
+                }
+
+                // Parse the player's input and adjust for zero-based indexing.
+                if (int.TryParse(input, out int choice) && choice >= 1 && choice <= 3)
+                {
+                    // Adjust index by 0 position.
+                    return choice - 1;
+                }
+
+                _ui.WriteLine("Invalid input. Please choose a valid door (1, 2, or 3) or 'q' to quit.");
+            }
         }
 
         /// <summary>
