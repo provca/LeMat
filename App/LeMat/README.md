@@ -1,7 +1,7 @@
 # Le Mat: Mathematical Curiosities and Logical Dilemmas
 **Le Mat** is a project that combines mathematical curiosities and logical dilemmas inspired by mythology, popular culture, and scientific concepts. Its goal is to transform these ideas into entertaining algorithms, appealing to both programmers and anyone interested in mathematical challenges and logic.
 
-![Le Mat](img/Le_Mat.jpg)
+![Le Mat](img/LeMat.jpg)
 
 ## **Overview**
 
